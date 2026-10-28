@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
+<title>夕張市石炭博物館｜本物の坑道に降りる、炭鉱のまちの記憶</title>
+<meta name="description" content="北海道夕張市の石炭博物館。実際の石炭層に接した模擬坑道を歩き、夕張炭鉱の栄枯盛衰と炭鉱で生きた人々の暮らしに触れる。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --coal:#1c1917; --coal2:#272320; --brass:#c4964a; --brass-d:#8f6a2c;
+  --paper:#e8dfcc; --paper2:#f1eadb; --ink:#2a2420; --ash:#9a9283;
+  --serif:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --sans:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.9;font-size:16px;
+  padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right);overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+.wrap{max-width:960px;margin:0 auto;padding:0 22px}
+h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.5}
+h2{font-size:clamp(1.5rem,5.6vw,2.1rem);letter-spacing:.06em;margin-bottom:1.4rem}
+h2::after{content:"";display:block;width:56px;height:2px;background:var(--brass);margin-top:.9rem}
+section{padding:72px 0}
+.dark{background:var(--coal);color:var(--paper)}
+.dark h2{color:var(--paper2)}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;background:var(--coal);color:var(--paper2);overflow:hidden;
+  padding-top:env(safe-area-inset-top)}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.62}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,25,23,.25) 0%,rgba(28,25,23,.55) 55%,var(--coal) 100%)}
+.hero .wrap{position:relative;z-index:1;padding-bottom:calc(64px + env(safe-area-inset-bottom));width:100%}
+.hero small{display:block;font-family:var(--serif);letter-spacing:.3em;color:var(--brass);font-size:.82rem;margin-bottom:1.1rem}
+.hero h1{font-size:clamp(2rem,9.2vw,3.9rem);letter-spacing:.08em;line-height:1.35;margin-bottom:1.2rem}
+.hero p{max-width:30em;color:#d9cfba;font-size:.98rem}
+.hero .addr{margin-top:1.6rem;font-size:.85rem;color:var(--ash);letter-spacing:.06em}
+
+/* story */
+.story p{margin-bottom:1.3em;max-width:36em}
+.year{display:grid;grid-template-columns:5.2em 1fr;gap:.2rem 1rem;margin-top:2rem;border-top:1px solid var(--brass-d);padding-top:1.4rem}
+.year dt{font-family:var(--serif);color:var(--brass-d);font-weight:700}
+.year dd{margin-bottom:.9rem;font-size:.95rem}
+
+/* feature */
+.feature{display:grid;gap:26px}
+.feature figure img{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--coal2);border:1px solid var(--brass-d)}
+.feature figcaption{font-size:.78rem;color:var(--ash);margin-top:.6rem}
+.feature h3{font-size:1.3rem;margin-bottom:.8rem;color:var(--paper2)}
+.feature p{color:#d6ccb7;font-size:.98rem}
+.feature + .feature{margin-top:56px}
+
+/* strengths */
+.points{list-style:none;display:grid;gap:18px}
+.points li{background:var(--paper2);border-left:3px solid var(--brass);padding:20px 22px}
+.points b{display:block;font-family:var(--serif);font-size:1.1rem;margin-bottom:.3rem}
+.points span{font-size:.94rem}
+
+/* reviews */
+.review{border:1px solid var(--brass-d);padding:26px 22px;margin-bottom:22px;background:var(--coal2)}
+.review .stars{color:var(--brass);letter-spacing:.2em;margin-bottom:.8rem;font-size:1.05rem}
+.review p{font-size:.95rem;color:#d9cfba;margin-bottom:.9em}
+.review p:last-child{margin-bottom:0}
+.review h3{font-size:1.05rem;color:var(--paper2);margin-bottom:.7rem}
+
+/* info */
+.info{border-top:1px solid var(--ink)}
+.info div{display:grid;grid-template-columns:6.2em 1fr;gap:1rem;padding:15px 0;border-bottom:1px solid rgba(42,36,32,.25);font-size:.96rem}
+.info dt{font-family:var(--serif);font-weight:700}
+.info dd{word-break:break-all}
+.note{margin-top:1.2rem;font-size:.88rem;color:#5b5247}
+
+/* map */
+.map{position:relative;aspect-ratio:4/3;max-height:480px;width:100%;background:var(--coal2);border:1px solid var(--brass-d)}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.btn{display:flex;align-items:center;justify-content:center;min-height:56px;margin-top:14px;background:var(--brass);color:var(--coal);
+  font-family:var(--serif);font-weight:700;font-size:1.05rem;letter-spacing:.1em;text-decoration:none;-webkit-tap-highlight-color:transparent}
+.btn:active{background:var(--brass-d);color:var(--paper2)}
+.tel{margin-top:14px;background:transparent;color:var(--coal);border:1px solid var(--coal)}
+.tel:active{background:var(--coal);color:var(--paper2)}
+.access{margin-top:1.4rem;font-size:.92rem;max-width:38em}
+
+/* sns */
+.sns{display:flex;gap:16px;margin-top:1.4rem}
+.sns a{width:48px;height:48px;border:1px solid var(--brass);border-radius:50%;display:grid;place-items:center;color:var(--brass);-webkit-tap-highlight-color:transparent}
+.sns a:active{background:var(--brass);color:var(--coal)}
+.sns svg{width:22px;height:22px;fill:currentColor}
+footer{background:var(--coal);color:var(--ash);text-align:center;font-size:.8rem;padding:36px 22px calc(36px + env(safe-area-inset-bottom))}
+footer a{color:var(--brass)}
+
+@media(min-width:768px){
+  section{padding:112px 0}
+  .feature{grid-template-columns:1.1fr 1fr;align-items:center;gap:48px}
+  .feature.rev figure{order:2}
+  .points{grid-template-columns:1fr 1fr}
+  .btn{max-width:360px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <img src="images/1.jpg" alt="夕張市石炭博物館の外観と立坑櫓" width="1600" height="900" fetchpriority="high">
+  <div class="wrap">
+    <small>北海道・夕張</small>
+    <h1>本物の坑道に降りる。<br>炭鉱のまちの記憶へ。</h1>
+    <p>夕張市石炭博物館は、かつて北海道の基幹産業だった石炭の歴史と、炭鉱で生きた人々の暮らしを今に伝える博物館です。</p>
+    <p class="addr">夕張市高松7番地</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap story">
+    <h2>石炭の歴史を、まるごと残す。</h2>
+    <p>1970年に開設された夕張市郷土資料館を前身に、石炭の歴史村の中核施設として1980年7月に開館しました。目的は、北海道の基幹産業であった石炭産業の歴史と、炭鉱で生きた人々の生活文化を保存し、広く伝えることです。</p>
+    <p>旧北炭夕張炭鉱の採炭現場を模した模擬坑道は、実際の石炭層に接した坑道そのもの。世界でも珍しい貴重な資料として、いまも多くの人を迎えています。</p>
+    <dl class="year">
+      <dt>1980年</dt><dd>石炭の歴史村の中核施設として開館</dd>
+      <dt>2007年</dt><dd>2006年の市の財政危機を経て、加森観光が指定管理者として運営を再開</dd>
+      <dt>2018年</dt><dd>7億5千万円を投じた大規模改修</dd>
+      <dt>2025年</dt><dd>ふるさと納税型クラウドファンディングにより、模擬坑道の公開を再開</dd>
+    </dl>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap">
+    <h2>体験する</h2>
+    <div class="feature">
+      <figure>
+        <img src="images/2.jpg" alt="展示されたヘルメットや坑内灯などの炭鉱道具" width="1200" height="900" loading="lazy">
+        <figcaption>炭鉱で使われた道具と暮らしの資料</figcaption>
+      </figure>
+      <div>
+        <h3>写真と資料が語る、夕張炭鉱の百年</h3>
+        <p>発展の歴史、技術革新、町の成り立ちを、貴重な写真パネルや資料、生活用品で紹介。リアルなマネキンや作業風景のジオラマが、炭鉱労働の実態と炭鉱町の暮らしを分かりやすく伝えます。</p>
+      </div>
+    </div>
+    <div class="feature rev">
+      <figure>
+        <img src="images/3.jpg" alt="木枠で支えられた模擬坑道の内部" width="1200" height="900" loading="lazy">
+        <figcaption>旧北炭夕張炭鉱模擬坑道</figcaption>
+      </figure>
+      <div>
+        <h3>エレベーターで地下へ。模擬坑道を歩く</h3>
+        <p>エレベーターで地下展示場へ進むと、本物の坑道をそのまま使った探検コースが続きます。石炭層、掘削機械、人力作業の移り変わりを間近に見学できる、この館最大の体験です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>この館の強み</h2>
+    <ul class="points">
+      <li><b>資料の豊富さと歴史的価値</b><span>夕張炭鉱の歩みを、写真・資料・生活用品で立体的にたどれます。</span></li>
+      <li><b>国内屈指の動態保存</b><span>炭鉱施設や模擬坑道を、動態保存という形で体感できる規模を誇ります。</span></li>
+      <li><b>炭鉱の暮らしを実感</b><span>労働の実態から炭鉱町の生活まで、展示で身近に感じられます。</span></li>
+      <li><b>地域文化遺産としての印象</b><span>石炭産業の歴史的重要性と、地域の文化遺産を強く心に残します。</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap">
+    <h2>訪れた方の声</h2>
+    <article class="review">
+      <div class="stars" aria-label="評価 5段階中4">★★★★</div>
+      <h3>夕張の栄枯衰退がわかる石炭博物館</h3>
+      <p>「バリバリ夕張」このフレーズが頭に残っている。約30年ぶりに「元石炭の歴史村」に訪れた！博物館に到着するまでめちゃくちゃ廃墟(||゜Д゜)笑</p>
+      <p>実際に使用された坑道の中を見学できる日本唯一の「模擬立坑」が有名です。ここだけでも見る価値アリ！！</p>
+      <p>夕張の歴史や炭鉱のことを詳しく知ることができる貴重な施設。</p>
+    </article>
+    <article class="review">
+      <div class="stars" aria-label="評価 5段階中5">★★★★★</div>
+      <p>夕張炭鉱跡に開設された博物館。実際に採掘していた坑道をそのまま展示施設にしていて（施設内では「模擬坑道」と呼ばれる）臨場感もとてもあった。ぶっちゃけ佐渡金山の坑道よりもこっちのほうが内容も濃くて面白かった。坑道に続くエレベーターも通常稼働版と当時の坑道エレベータ模したゆっくり真っ暗稼働版の2基用意されているのも芸が細かい。</p>
+      <p>あと解説員さんの解説はぜひ聞いてみるとよいでしょう。模擬坑道の説明聞くと解像度がめっちゃ上がります。（なんせ模擬坑道、ちょっと前に火災で埋めた坑道を再発掘して展示しているので）</p>
+      <p>アクセス、Googleマップのナビで来るともしかしたら道道38の何もないところで案内終了になる恐れがあるので注意（自分がそうだった）正解ルートは南側の「夕張市石炭博物館」ののぼりと看板のある交差点を入って奥に進むのが正解。道路入った先と駐車場は夕張市らしくちょっと荒れ気味ですが一応舗装はされています。</p>
+    </article>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>アクセス・基本情報</h2>
+    <dl class="info">
+      <div><dt>施設名</dt><dd>夕張市石炭博物館</dd></div>
+      <div><dt>住所</dt><dd>夕張市高松7番地</dd></div>
+      <div><dt>定休日</dt><dd>火曜日・冬期（11月上旬～4月下旬）</dd></div>
+      <div><dt>電話</dt><dd><a href="tel:0123525500">0123-52-5500</a></dd></div>
+      <div><dt>メール</dt><dd><a href="mailto:info-cm@soratan.or.jp">info-cm@soratan.or.jp</a></dd></div>
+      <div><dt>公式HP</dt><dd><a href="https://coal-yubari.jp/" target="_blank" rel="noopener">https://coal-yubari.jp/</a></dd></div>
+    </dl>
+    <p class="note">お出かけ前に、公式サイトで最新の開館状況をご確認ください。</p>
+
+    <div style="margin-top:36px">
+      <div class="map">
+        <iframe title="夕張市石炭博物館の地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=%E5%A4%95%E5%BC%B5%E5%B8%82%E7%9F%B3%E7%82%AD%E5%8D%9A%E7%89%A9%E9%A4%A8&hl=ja&z=15&output=embed"></iframe>
+      </div>
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%95%E5%BC%B5%E5%B8%82%E7%9F%B3%E7%82%AD%E5%8D%9A%E7%89%A9%E9%A4%A8" target="_blank" rel="noopener">Googleマップで開く</a>
+      <a class="btn tel" href="tel:0123525500">電話で問い合わせる</a>
+    </div>
+    <p class="access">ナビによっては、道道38号の途中で案内が終わることがあります。南側の「夕張市石炭博物館」ののぼりと看板のある交差点から入り、奥へ進んでください。</p>
+
+    <div class="sns" aria-label="公式SNS">
+      <a href="https://x.com/coal_mus_yubari" target="_blank" rel="noopener" aria-label="X（旧Twitter）"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a href="https://www.instagram.com/soratan_tantetsuko/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" style="fill:currentColor;stroke:none"/></svg></a>
+      <a href="https://www.facebook.com/coal.museum.yubari/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 21.5v-8h2.700l.4-3.200h-3.100V8.300c0-.9.3-1.500 1.600-1.500h1.700V3.900c-.3 0-1.300-.1-2.400-.1-2.400 0-4.100 1.500-4.100 4.200v2.300H7.500v3.200h2.800v8h3.200z"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>夕張市石炭博物館｜夕張市高松7番地</p>
+  <p style="margin-top:.5rem"><a href="https://coal-yubari.jp/" target="_blank" rel="noopener">公式サイト</a></p>
+</footer>
+</body>
+</html>
